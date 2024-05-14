@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: rq-db
+  namespace: db-ns
+spec:
+  hard:
+    requests.cpu: 100m
+    limits.cpu: 200m
+    requests.memory: 200Mi
+    limits.memory: 400Mi

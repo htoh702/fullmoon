@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: coffee-spring-deploy
+  namespace: coffee-ns
+  labels:
+    app: coffee-spring-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: coffee-spring-deploy
+  template:
+    metadata:
+      labels:
+        app: coffee-spring-deploy
+    spec:
+      containers:
+      - name: coffee-spring
+        image: parksewoong/fullmoon-back:coffeeV8
+        ports:
+          - containerPort: 8080

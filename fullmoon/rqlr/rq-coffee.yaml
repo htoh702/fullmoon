@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: rq-coffee
+  namespace: coffee-ns
+spec:
+  hard:
+    requests.cpu: 100m  
+    limits.cpu: 200m
+    requests.memory: 200Mi
+    limits.memory: 400Mi

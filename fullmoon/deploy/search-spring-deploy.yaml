@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: search-spring-deploy
+  namespace: search-ns
+  labels:
+    app: search-spring-deploy
+    svc: fullmoon
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: search-spring-deploy
+  template:
+    metadata:
+      labels:
+        app: search-spring-deploy
+    spec:
+      containers:
+      - name: search-spring
+        image: parksewoong/fullmoon-back:searchV3
+        ports:
+        - containerPort: 8080

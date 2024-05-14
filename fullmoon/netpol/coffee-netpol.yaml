@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-ingress-from-loadbalancer
+  namespace: coffee-ns
+spec:
+  podSelector:
+    matchLabels: {}
+  ingress:
+    - from:
+      - ipBlock:
+          cidr: 10.109.69.0/24
+      - ipBlock:
+          cidr: 10.102.219.0/24

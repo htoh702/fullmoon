@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: coffee-spring-deploy
+  name: coffee-svc
+  namespace: coffee-ns
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: coffee-spring-deploy
+status:
+  loadBalancer: {}

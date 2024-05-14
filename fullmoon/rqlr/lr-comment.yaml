@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: lr-comment
+  namespace: comment-ns
+spec:
+  limits:
+    - type: Container
+      max:
+        cpu: 60m
+        memory: 64Mi
+      min:
+        cpu: 30m
+        memory: 32Mi
+      default:
+        cpu: 45m
+        memory: 48Mi
+      defaultRequest:
+        cpu: 30m
+        memory: 40Mi

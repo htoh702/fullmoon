@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: search-spring-deploy
+  name: search-svc
+  namespace: search-ns
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: search-spring-deploy
+  type: NodePort
+status:
+  loadBalancer: {}

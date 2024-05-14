@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: comment-spring-deploy
+  namespace: comment-ns
+  labels:
+    app: comment-spring-deploy
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: comment-spring-deploy
+  template:
+    metadata:
+      labels:
+        app: comment-spring-deploy
+    spec:
+      containers:
+      - name: comment-spring
+        image: parksewoong/fullmoon-back:commentV2
+        ports:
+        - containerPort: 8080
+

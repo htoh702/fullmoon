@@ -1,0 +1,24 @@
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: fullmoon-gateway
+  namespace: istio-system
+spec:
+  selector:
+    istio: ingressgateway  # istio의 기본 ingress gateway를 사용
+  servers:
+  - port:
+      number: 443
+      name: https
+      protocol: HTTPS
+    tls:
+      mode: SIMPLE
+      credentialName: fullmoon-tls
+    hosts:
+    - "*"
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "*"
