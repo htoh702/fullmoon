@@ -28,6 +28,6 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         context: .
-        file: ./Dockerfile
+        file: ./frontend/Dockerfile
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/test:$(date +%s)
+        tags: ${{ secrets.DOCKER_USERNAME }}/fullmoon_frontend:$(date +%s)
