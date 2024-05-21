@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: coffee-spring
-        image: parksewoong/fullmoon-spring:coffeeV3
+        image: parksewoong/fullmoon-spring:coffeeV4
         ports:
           - containerPort: 8080
