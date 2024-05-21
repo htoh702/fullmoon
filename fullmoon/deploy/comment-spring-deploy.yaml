@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: comment-spring
-        image: parksewoong/fullmoon-spring:commentV2
+        image: parksewoong/fullmoon-spring:commentV3
         ports:
         - containerPort: 8080
 
