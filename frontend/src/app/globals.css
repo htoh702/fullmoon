@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 33, 37, 41; /* 진한 회색으로 텍스트 색상 변경, 커피 테마 유지하면서 더 현대적인 느낌 */
+  --background-start-rgb: 247, 247, 247; /* 매우 밝은 회색으로 배경 시작 */
+  --background-end-rgb: 225, 225, 225; /* 약간 진한 회색으로 배경 끝 */
+
+  --background-color: #f8f9fa; /* 매우 밝은 회색 */
+  --foreground-color: #343a40; /* 거의 검은색에 가까운 진한 회색 */
+  --hover-color: #495057; /* 중간 회색 */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 233, 236, 239; /* 밝은 회색으로 텍스트 색상 변경 */
+    --background-start-rgb: 33, 37, 41; /* 진한 회색으로 시작 */
+    --background-end-rgb: 52, 58, 64; /* 더 진한 회색으로 끝 */
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      rgb(var(--background-start-rgb)),
+      rgb(var(--background-end-rgb))
+    );
+  transition: background-color 0.3s, color 0.3s;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.navbar-custom {
+  background-color: var(--background-color);
+  color: var(--foreground-color);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06); /* 추가된 그림자 효과로 깊이감 증가 */
+}
+
+.link-custom {
+  color: var(--foreground-color);
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.3s;
+}
+
+.link-custom:hover, .link-custom:focus {
+  color: var(--hover-color);
+  text-decoration: none; /* 밑줄 제거로 더 세련되게 */
+  font-weight: 500; /* 마우스 오버시 글자 굵기 증가 */
+}
+
+.link-active {
+  font-weight: 700;
+  color: var(--hover-color); /* 활성 링크 색상 변경 */
+}
