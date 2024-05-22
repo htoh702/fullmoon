@@ -18,7 +18,7 @@ spec:
         app: front-deploy
     spec:
       containers:
-      - image: ohhong/fullmoon_frontend
+      - image: ohhong/fullmoon_frontend:test
         name: front
         resources: {}
 status: {}
