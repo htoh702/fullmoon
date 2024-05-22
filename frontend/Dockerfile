@@ -1,4 +1,4 @@
-FROM node:21-bullseye-slim
+FROM node:21-alpine3.18
 
 # Default Environment Value
 ENV COFFEE_API_ADDR=istio-ingressgateway.istio-system.svc.cluster.local:30443 \
