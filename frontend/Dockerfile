@@ -6,9 +6,8 @@ ENV COFFEE_API_ADDR=istio-ingressgateway.istio-system.svc.cluster.local:30443 \
 EXPOSE 3000
 RUN mkdir /frontweb
 WORKDIR /frontweb
-COPY package*.json ./
-RUN npm install
 COPY . .
-RUN chmod -R 777 ./node_modules
-CMD ["npm", "run", "dev"]
+CMD "chmod -R 777 ./node_modules/"
+ENTRYPOINT npm install
+ENTRYPOINT npm run dev
 
