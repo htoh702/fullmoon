@@ -7,7 +7,7 @@ EXPOSE 3000
 RUN mkdir /frontweb
 WORKDIR /frontweb 
 COPY /frontend/ .
-RUN chmod -R 777 ./node_modules/
+
 RUN npm install
 
 CMD ["npm", "run", "dev"]
