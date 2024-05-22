@@ -1,0 +1,13 @@
+resources:
+- coffee-spring-deploy.yaml
+- coffee-svc.yaml
+- comment-spring-deploy.yaml
+- comment-svc.yaml
+- db-deploy.yaml
+- db-sc.yaml
+- front-deploy.yaml
+- front-svc.yaml
+- search-spring-deploy.yaml
+- search-svc.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
