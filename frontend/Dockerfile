@@ -4,8 +4,11 @@ FROM node:21-alpine3.18
 ENV COFFEE_API_ADDR=istio-ingressgateway.istio-system.svc.cluster.local:30443 \
     COFFEE_WEB_PORT=3000
 EXPOSE 3000
-WORKDIR /frontweb
-COPY . .
-CMD "chmod -R 777 ./node_modules/"
-ENTRYPOINT npm install
-ENTRYPOINT npm run dev
+RUN mkdir /frontweb
+WORKDIR /frontweb 
+COPY /frontend/ .
+RUN chmod -R 777 ./node_modules/
+RUN npm install
+
+CMD ["npm", "run", "dev"]
+
