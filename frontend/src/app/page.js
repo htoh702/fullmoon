@@ -9,7 +9,7 @@ const Home = () =>{
       <Image
         width="1050"
         height="60"
-        src="https://acswiki-bucket.s3.ap-northeast-2.amazonaws.com/Frame1.png"
+        src="https://acswiki-bucket.s3.ap-northeast-2.amazonaws.com/bolimwine.jpg"
         alt="NextUI hero Image"
         className="w-full h-auto"
       />
